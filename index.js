@@ -23,7 +23,7 @@ const questions = [
     {
         type: 'input',
         name: 'usage',
-        message: 'Enter usage in information: ',
+        message: 'Enter usage information: ',
     },
     {
         type: 'input',
@@ -53,8 +53,12 @@ const questions = [
     }
 ];
 
-inquirer.prompt(questions).then((answers) => {
-    console.log(answers);
+inquirer.prompt(questions).then((data) => {
+    const mdOutput = generateMarkdown(data);
+    fs.writeFile('README.md', mdOutput, (err) => {
+        err ? console.log(err) : console.log('Successfully created README.md!!')
+    });
+
 });
 
 
