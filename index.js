@@ -39,7 +39,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Choose a license for your application: ',
-        choices: ['choice A', 'choice B', 'choice C'],
+        choices: ['MIT', 'GNU GPLv3', 'Apache License 2.0', 'ISC License', 'No License'],
     },
     {
         type: 'input',
@@ -61,9 +61,6 @@ inquirer.prompt(questions).then((data) => {
 
 });
 
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {}
